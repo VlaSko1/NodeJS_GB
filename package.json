@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_gb",
+  "version": "1.0.0",
+  "description": "Доброго времени суток. В данный репозиторий будут загружаться решения домашних заданий по курсу GeekBrains: \"Node.JS\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VlaSko1/NodeJS_GB.git"
+  },
+  "author": "Vizion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VlaSko1/NodeJS_GB/issues"
+  },
+  "homepage": "https://github.com/VlaSko1/NodeJS_GB#readme"
+}
