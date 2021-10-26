@@ -1,14 +1,22 @@
-var colors = require('colors/safe');
- 
-console.log(colors.green('hello')); // outputs green text
-console.log(colors.red.underline('i like cake and pies')) // outputs red underlined text
-//console.log(colors.inverse('inverse the color')); // inverses the color
-console.log(colors.rainbow('OMG Rainbows!')); // rainbow
-console.log(colors.trap('Run the trap')); // Drops the bass
+const colors = require('colors/safe');
+const errorObj = require('./myModule/error');
+const objSimpleNumber = require('./myModule/simpleNumber');
+const objFormatResult = require('./myModule/formatResult');
 
 
+const number1 = Number(process.argv[2]);
+const number2 = Number(process.argv[3]);
 
 
+if (Number.isNaN(number1) || Number.isNaN(number2)) {
+  return errorObj.getError("notNaN");
+}
+if (number1 >= number2) {
+  return errorObj.getError('oneMinTwo')
+}
 
 
-console.log(Number(process.argv[2]) + Number(process.argv[3]));
+const result = objSimpleNumber.getArraySimpleNumFromRange(number1, number2);
+
+objFormatResult.returnResult(result);
+
