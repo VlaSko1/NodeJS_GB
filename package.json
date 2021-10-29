@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/VlaSko1/NodeJS_GB/issues"
   },
-  "homepage": "https://github.com/VlaSko1/NodeJS_GB#readme"
+  "homepage": "https://github.com/VlaSko1/NodeJS_GB#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
 }
