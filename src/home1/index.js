@@ -7,7 +7,6 @@ const objFormatResult = require('./myModule/formatResult');
 const number1 = Number(process.argv[2]);
 const number2 = Number(process.argv[3]);
 
-
 if (Number.isNaN(number1) || Number.isNaN(number2)) {
   return errorObj.getError("notNaN");
 }
@@ -19,4 +18,3 @@ if (number1 >= number2) {
 const result = objSimpleNumber.getArraySimpleNumFromRange(number1, number2);
 
 objFormatResult.returnResult(result);
-
