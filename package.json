@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "home1": "node ./src/home1/index"
+    "home1": "node ./src/home1/index",
+    "home2_task1": "node ./src/home2/task1/index",
+    "home2_task2": "node ./src/home2/task2/index"
   },
   "repository": {
     "type": "git",
