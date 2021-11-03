@@ -12,7 +12,7 @@ if (arrTimers.length === 0) {
 
 const arrObjTimers = getObjTimers(arrTimers);
 if (arrObjTimers.length === 0) {
-  return console.log(colors.red("В программу были введены только некорректные таймеры, повторите попытку."));
+  return console.log(colors.red("В программу были введены только некорректные или нулевые таймеры, повторите попытку."));
 }
 
 

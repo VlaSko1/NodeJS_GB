@@ -18,6 +18,10 @@ function getObjTimers(arrTimers) {
       console.log(colors.red(`${i + 1} таймер задан в формате отличном от "час-день-месяц-год" (вводить цифрами).`));
       continue;
     }
+    if (arrTimersSecond[i] <= 0) {
+      console.log(colors.green(`Таймер ${i + 1} завершён!`));
+      continue;
+    }
     objTimers.push({name: `Таймер ${i + 1}`, time: arrTimersSecond[i]});
   }
 
