@@ -121,11 +121,33 @@
       font-size: calc(13px + 1vh);
       
     }
-    .display_field {
+    .display-field {
       margin-top: 10px;
       flex: 1;
-      background-color: #FFFFF0;
       width: 80%;
+      display: flex;
+      overflow-y: auto;
+    }
+    .explorer{
+      
+      height: 100%;
+      width: 30%;
+      background-color: #FFFFF0;
+    }
+    .explorer__header, .field-text__header{
+      font-size: calc(13px + 1vh);
+      margin: 8px;
+      text-align: center;
+    }
+    .explorer__field {
+      overflow-y: auto;
+    }
+    .field-text{
+      height: 100%;
+      width: 70%;
+      background-color: #FDF5E6;
+    }
+    .field-text__field {
       overflow-y: auto;
     }
     footer {
@@ -153,12 +175,19 @@
     <main class="container">
       <h2 class="main__header">Содержание папки:</h2>
       <p class="text">Полный путь: <span class="text__span"></span></p>
-      <div class="display_field">
-
+      <div class="display-field">
+        <div class="explorer">
+          <h4 class="explorer__header">Проводник</h4>
+          <p class="explorer__field"></p>
+        </div>
+        <div class="field-text">
+          <h4 class="field-text__header">Текст файла</h4>
+          <p class="field-text__field"></p>
+        </div>
       </div>
     </main>
     <footer>
-      <p class="footer__text" id="footer">Текущий год</p>
+      <p class="footer__text" id="footer"><%= nowYear %> г.</p>
     </footer>
   </div>
 
