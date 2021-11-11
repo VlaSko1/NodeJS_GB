@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    /*Обнуление стилей*/
+    * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    *,
+    *::before,
+    *::after {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    :focus,
+    :active {
+      outline: none;
+    }
+
+    a:focus,
+    a:active {
+      outline: none;
+    }
+
+    nav,
+    footer,
+    header,
+    aside {
+      display: block;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      font-size: 100%;
+      line-height: 1;
+      font-size: 13px;
+      -ms-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    input,
+    button,
+    textarea {
+      font-family: inherit;
+    }
+
+    input::-ms-clear {
+      display: none;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+
+    a,
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: 400;
+    }
+
+    /*------Стили-------*/
+    header {
+      background-color: #F0F8FF;
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .header__text {
+      font-size: calc(13px + 2vh);
+    }
+    main {
+      display: flex;
+      height: 80vh;
+      align-items: center;
+      background-color: #DCDCDC;
+      flex-direction: column;
+    }
+    .main__header {
+      font-size: calc(13px + 2vh);
+      margin: 20px auto;
+    }
+    .text {
+      font-size: calc(13px + 1vh);
+      
+    }
+    .display_field {
+      margin-top: 10px;
+      flex: 1;
+      background-color: #FFFFF0;
+      width: 80%;
+      overflow-y: auto;
+    }
+    footer {
+      display: flex;
+      height: 10vh;
+      justify-content: center;
+      align-items: center;
+      background-color: #C0C0C0; 
+    }
+    .footer__text {
+      font-size: calc(13px + 1vh);
+    }
+
+
+    
+  </style>
+  <title>Read text file</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header__text">Читаем текстовый файл в нашей файловой системе!</h1>
+    </header>
+    <main class="container">
+      <h2 class="main__header">Содержание папки:</h2>
+      <p class="text">Полный путь: <span class="text__span"></span></p>
+      <div class="display_field">
+
+      </div>
+    </main>
+    <footer>
+      <p class="footer__text" id="footer">Текущий год</p>
+    </footer>
+  </div>
+
+</body>
+
+</html>
