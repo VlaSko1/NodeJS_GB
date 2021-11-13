@@ -13,6 +13,7 @@
     "home2_task1": "node ./src/home2/task1/index",
     "home2_task2": "node ./src/home2/task2/index",
     "home3": "node ./src/home3/index",
+    "home5": "node ./src/home5/index",
     "dev5": "nodemon src/home5/index.js -w src/home5/*"
   },
   "repository": {
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/VlaSko1/NodeJS_GB#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "colors": "^1.4.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",

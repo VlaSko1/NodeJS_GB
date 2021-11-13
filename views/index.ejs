@@ -96,6 +96,14 @@
     }
 
     /*------Стили-------*/
+    .fixed-reload {
+      position: fixed;
+      display: block;
+      top: 4%;
+      left: 3%;
+      color: rebeccapurple;
+      font-size: calc(13px + 1vh);
+    }
     header {
       background-color: #F0F8FF;
       height: 10vh;
@@ -144,22 +152,18 @@
       height: 100%;
       width: 30%;
       background-color: #FFFFF0;
-
     }
-
     .explorer__header,
     .field-text__header {
       font-size: calc(13px + 1vh);
       margin: 8px;
       text-align: center;
     }
-
     .explorer__field {
       overflow-y: auto;
       flex: 1;
       padding: 0 5px;
     }
-
     .explorer__link {
       display: block;
       font-size: calc(13px + 1vh);
@@ -167,12 +171,9 @@
       text-decoration: none;
       color: blue;
     }
-
     .explorer__link:hover {
       color: #FF4500
-
     }
-
     .field-text {
       height: 100%;
       width: 70%;
@@ -181,14 +182,12 @@
       flex-direction: column;
 
     }
-
     .field-text__field {
       flex: 1;
       overflow-y: auto;
       padding: 0 5px;
       font-size: calc(11px + 0.5vh);
     }
-
     footer {
       display: flex;
       height: 10vh;
@@ -196,32 +195,56 @@
       align-items: center;
       background-color: #C0C0C0;
     }
-
     .footer__text {
       font-size: calc(13px + 1vh);
     }
   </style>
   <title>Read text file</title>
+  <script>
+    function postToUrl(param) {
+      
+      method = "POST"; 
+      path = '/';
+  
+      const form = document.createElement("form");
+      form.setAttribute("method", method);
+      form.setAttribute("action", path);
+  
+      const hiddenField = document.createElement("input");
+      hiddenField.setAttribute("type", "hidden");
+      hiddenField.setAttribute("name", 'name');
+      hiddenField.setAttribute("value", param);
+  
+      form.appendChild(hiddenField);
+      
+      document.body.appendChild(form);
+      form.submit();
+    }
+  </script>
 </head>
 
 <body>
   <div class="wrapper">
+    <a href="/" class="fixed-reload">OБНОВИТЬ</a>
     <header>
       <h1 class="header__text">Читаем текстовый файл в нашей файловой системе!</h1>
     </header>
     <main class="container">
-      <h2 class="main__header">Содержание папки: <span class="text__span"><%= folder %></span></h2>
-      <p class="text">Полный путь: <span class="text__span"><%= pathDir %></span></p>
+      <h2 class="main__header">Содержание папки: <span class="text__span">
+          <%= folder %>
+        </span></h2>
+      <p class="text">Полный путь: <span class="text__span">
+          <%= pathDir %>
+        </span></p>
       <div class="display-field">
         <div class="explorer">
           <h4 class="explorer__header">Проводник</h4>
           <p class="explorer__field">
             <% for( let i=0; i < arrDir.length; i++) {%>
-              <a class="explorer__link" href="?name=<%=arrDir[i] %>">
+              <a class="explorer__link" href="#" onclick="postToUrl('<%=arrDir[i] %>')">
                 <%=arrDir[i] %>
               </a>
               <% } %>
-
           </p>
         </div>
         <div class="field-text">
@@ -236,7 +259,5 @@
       </p>
     </footer>
   </div>
-
 </body>
-
 </html>
