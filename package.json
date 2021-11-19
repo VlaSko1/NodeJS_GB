@@ -14,7 +14,9 @@
     "home2_task2": "node ./src/home2/task2/index",
     "home3": "node ./src/home3/index",
     "home5": "node ./src/home5/index",
-    "dev5": "nodemon src/home5/index.js -w src/home5/*"
+    "dev5": "nodemon src/home5/index.js -w src/home5/*",
+    "dev6_task1": "nodemon src/home6/task1/index.js -w src/home6/task1/*",
+    "dev6_task2": "nodemon src/home6/task2/index.js -w src/home6/task2/*"
   },
   "repository": {
     "type": "git",
@@ -31,7 +33,9 @@
     "colors": "^1.4.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "socket.io": "^4.3.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

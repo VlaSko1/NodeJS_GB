@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <title>Read text file</title>
+  <script>
+    function postToUrl(param) {
+      
+      method = "POST"; 
+      path = '/';
+  
+      const form = document.createElement("form");
+      form.setAttribute("method", method);
+      form.setAttribute("action", path);
+  
+      const hiddenField = document.createElement("input");
+      hiddenField.setAttribute("type", "hidden");
+      hiddenField.setAttribute("name", 'name');
+      hiddenField.setAttribute("value", param);
+  
+      form.appendChild(hiddenField);
+      
+      document.body.appendChild(form);
+      form.submit();
+    }
+  </script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <a href="/" class="fixed-reload">OБНОВИТЬ</a>
+    <header>
+      <h1 class="header__text">Читаем текстовый файл в нашей файловой системе!</h1>
+    </header>
+    <main class="container">
+      <h2 class="main__header">Содержание папки: <span class="text__span">
+          <%= folder %>
+        </span></h2>
+      <p class="text">Полный путь: <span class="text__span">
+          <%= pathDir %>
+        </span></p>
+      <div class="display-field">
+        <div class="explorer">
+          <h4 class="explorer__header">Проводник</h4>
+          <p class="explorer__field">
+            <% for( let i=0; i < arrDir.length; i++) {%>
+              <a class="explorer__link" href="#" onclick="postToUrl('<%=arrDir[i] %>')">
+                <%=arrDir[i] %>
+              </a>
+              <% } %>
+          </p>
+        </div>
+        <div class="field-text">
+          <h4 class="field-text__header">Текст файла</h4>
+          <pre class="field-text__field"><%= textFile %></pre>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p class="footer__text" id="footer">
+        <%= nowYear %> г.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
