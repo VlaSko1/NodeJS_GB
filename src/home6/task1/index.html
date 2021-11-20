@@ -2,9 +2,8 @@
 <html>
 
 <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"
-    integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
-    crossorigin="anonymous">
-</script>
+    integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous">
+    </script>
 
 <head>
     <title>Socket App</title>
@@ -15,12 +14,10 @@
 
     <input type="submit" id="send" value="Send">
 
-
-   <div id="messages"></div>
+    <div id="messages"></div>
 </body>
 <script type="text/javascript">
-    // const socket = io('localhost:3030');
-    
+
     const socket = io('127.0.0.1:3030');
 
     const addMessage = (msg) => {
@@ -29,29 +26,19 @@
         document.getElementById('messages').append(document.createElement('br'));
     };
 
-    
-
     socket.on('connect', function () {
         console.log('Successful connected to server');
-        
-        socket.emit('connect_user', {id: getId(), socketId: socket.id});
+        socket.emit('connect_user', { id: getId(), socketId: socket.id });
     });
-
-    
 
     socket.on('SERVER_MSG', function (data) {
         addMessage(data.msg);
     });
 
-    
     document.getElementById('send').onclick = function () {
-        socket.emit('CLIENT_MSG', { msg: document.getElementById('input').value });
+        socket.emit('CLIENT_MSG', { msg: document.getElementById('input').value, id: getId() });
         document.getElementById('input').value = '';
     };
-
-    //const data = { username: 'Igor', password: 'verysecurepassword' };
-
-
 
     function getId() {
         let item = sessionStorage.getItem('keySocket');
@@ -74,5 +61,4 @@
         return repitFunc(getChunk);
     }
 </script>
-
 </html>
