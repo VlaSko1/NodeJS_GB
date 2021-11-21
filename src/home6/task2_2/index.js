@@ -8,5 +8,5 @@ const pattern = getPattern();
 (async () => {
     const userInput = await getFile(CWD);
     
-    await showFileContents(userInput, pattern);
+    showFileContents(userInput, pattern);
 })();

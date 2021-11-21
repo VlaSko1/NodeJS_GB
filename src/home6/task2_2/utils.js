@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
-const { Transform } = require('stream');
-const { EOL } = require('os');
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const argv = yargs(hideBin(process.argv)).argv
@@ -46,33 +44,18 @@ const showFileContents = async (filepath, pattern) => {
             stream.pipe(process.stdout);
         });
     } else {
-        return new Promise((resolve) => {
-            const readStream = fs.createReadStream(filepath, 'utf-8');
-
-            const transformStream = new Transform({
-                transform(chunk, encoding, callback) {
-                    // Разбиваем чанк на массив
-                    let arrMatch = chunk.toString().match(/^(.*?)$/gm);
-
-                    // Ищем в полученном массиве совпадения и подставляем корректный перенос для текущей ОС.
-                    const rightArr = arrMatch.filter((el) => el.includes(pattern));
-                    let resultString = rightArr.join(`${EOL}`) + `${EOL}`;
-                    this.push(resultString);
-
-                    callback();
-                }
-            });
-            
-            readStream.pipe(transformStream).pipe(process.stdout);
-
-            readStream.on('error', (err) => console.log(err));
-
-            transformStream.on('error', (err) => console.log(err));
-
-            transformStream.on('end', resolve);
-        })
+        let { result } = await workerFunc({filepath, pattern});
+        console.log(result);
     }
 }
+const workerFunc = (workerData) => {
+    return new Promise((resolve, reject) => {
+        const worker = new Worker('./src/home6/task2_2/worker.js', { workerData });
+    
+        worker.on('message', resolve);
+        worker.on('error', reject);
+    })
+};
 const getPattern = () => {
     let pattern = argv.pattern;
     if (typeof pattern === 'string') {
@@ -116,8 +99,6 @@ const getFile = async (directory) => {
 
     return getFile(result);
 }
-
-
 
 module.exports = {
     getFileNamesInDirectory,
