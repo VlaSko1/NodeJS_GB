@@ -190,4 +190,28 @@
     .footer__text {
       font-size: calc(13px + 1vh);
     }
-  
+    .view-count {
+      position: fixed;
+      width: 100px;
+      height: 40px;
+      background-color: #FFEFD5;
+      bottom: 4%;
+      left: 3%; 
+      border: 1px solid #BDB76B;
+      display: flex;
+      align-items: center;
+    }
+    .view_count__img {
+      width: 40%;
+    }
+    .view-count__block {
+      width: 60%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .view-count__count {
+      font-size: 15px;
+    
+    }

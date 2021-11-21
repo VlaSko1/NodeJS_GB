@@ -17,7 +17,8 @@
     "dev5": "nodemon src/home5/index.js -w src/home5/*",
     "dev6_task1": "nodemon src/home6/task1/index.js -w src/home6/task1/*",
     "dev6_task2": "nodemon src/home6/task2/index.js -w src/home6/task2/*",
-    "home6_task1": "node ./src/home6/task1/index"
+    "home6_task1": "node ./src/home6/task1/index",
+    "home6_task2_1": "node ./src/home6/task2/index"
   },
   "repository": {
     "type": "git",
