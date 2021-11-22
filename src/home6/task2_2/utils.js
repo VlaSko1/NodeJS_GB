@@ -71,7 +71,6 @@ const getPath = () => {
         return CWD;
     }
     try {
-        
         if (path.isAbsolute(pathDir) && (fs.lstatSync(pathDir).isDirectory() || fs.lstatSync(pathDir).isFile())) {
             return pathDir;
         }
