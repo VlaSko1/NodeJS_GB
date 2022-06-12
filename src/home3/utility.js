@@ -14,7 +14,7 @@ const getFilterLogByIP = (IP, sourceFile) => {
   const getIP = saveIp(IP);
 
 
-  const readStream = fs.createReadStream(path.join(__dirname, `./${sourceFile}`), 'utf-8');
+  const readStream = fs.createReadStream(path.join(__dirname, sourceFile), 'utf-8');
   const writeStream = fs.createWriteStream(path.join(__dirname, `%${IP}%_requests.log`), { flag: 'a' });
 
   let incompletePieceStr = '';
